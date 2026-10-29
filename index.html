@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f9f7fb">
+  <meta name="theme-color" content="#f8d4c4">
   <meta name="description" content="Invitación de boda de muestra: una celebración inolvidable, con ceremonia, recepción, cronograma, galería y confirmación.">
   <link rel="canonical" href="https://jostamht.github.io/Muestra-Invitacion/">
   <meta property="og:type" content="website">
@@ -17,17 +17,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=demo1">
+  <link rel="stylesheet" href="styles.css?v=floral20261029">
   <script defer src="config.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body class="invitation-locked">
   <div class="envelope-screen" id="envelopeScreen" role="dialog" aria-modal="true" aria-labelledby="introTitle">
-    <img src="assets/botanico.svg" class="floral intro-floral intro-floral-left" alt="" aria-hidden="true">
-    <img src="assets/botanico.svg" class="floral intro-floral intro-floral-right" alt="" aria-hidden="true">
+    <img src="assets/floral-vivo.svg" class="floral intro-floral intro-floral-left" alt="" aria-hidden="true">
+    <img src="assets/floral-vivo.svg" class="floral intro-floral intro-floral-right" alt="" aria-hidden="true">
     <div class="intro-copy">
-      <span class="eyebrow" id="introTitle">UNA INVITACIÓN ESPECIAL</span>
-      <p class="handwriting">Para celebrar el amor</p>
+      <span class="eyebrow" id="introTitle">UNA INVITACIÓN MUY ESPECIAL</span>
+      <p class="intro-names" id="introNames">La Novia y el Novio</p>
+      <p class="intro-subtitle">te invitan a celebrar su boda</p>
+      <span class="intro-ornament" aria-hidden="true">✦ &nbsp; ❦ &nbsp; ✦</span>
     </div>
     <div class="envelope-scene">
       <div class="envelope-shadow"></div>
@@ -40,10 +42,16 @@
         </div>
         <div class="envelope-flap"></div>
         <div class="envelope-front"></div>
-        <button id="openInvitation" class="wax-seal" type="button" aria-label="Abrir invitación"><span>N<i>&amp;</i>N</span></button>
+        <button id="openInvitation" class="wax-seal" type="button" aria-label="Toca el sello para abrir la invitación"><span>N<i>&amp;</i>N</span></button>
+        <span class="seal-halo" aria-hidden="true"></span>
       </div>
     </div>
-    <p class="intro-hint">Toca el sello para abrir la invitación</p>
+    <div class="intro-hint" id="openingGuide">
+      <span class="hint-arrow" aria-hidden="true">↑</span>
+      <strong>TOCA EL SELLO PARA ABRIR</strong>
+      <small>Tu invitación te está esperando</small>
+    </div>
+    <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
   </div>
 
   <div class="site-shell" id="invitation" aria-hidden="true">
@@ -57,14 +65,14 @@
 
     <main>
       <section class="hero section" id="inicio">
-        <img src="assets/botanico.svg" class="floral hero-floral-left" alt="" aria-hidden="true">
-        <img src="assets/botanico.svg" class="floral hero-floral-right" alt="" aria-hidden="true">
+        <img src="assets/floral-vivo.svg" class="floral hero-floral-left" alt="" aria-hidden="true">
+        <img src="assets/floral-vivo.svg" class="floral hero-floral-right" alt="" aria-hidden="true">
         <div class="hero-content">
           <p class="eyebrow">DOS CORAZONES · UN NUEVO COMIENZO</p>
           <p class="handwriting hero-script">¡Nos casamos!</p>
           <h1><span id="nameOne">Novia</span><em>y</em><span id="nameTwo">Novio</span></h1>
           <div class="flourish" aria-hidden="true"><span></span>❦<span></span></div>
-          <p class="hero-message">Con mucha alegría queremos compartir contigo uno de los días más especiales de nuestras vidas.</p>
+          <p class="hero-message">Hay días que merecen guardarse para siempre. Nos encantará que formes parte de este momento inolvidable.</p>
           <p class="hero-date" id="heroDate">JUEVES · 31 DE DICIEMBRE · 2026</p>
           <a class="scroll-link" href="#fecha">DESCUBRE LA INVITACIÓN <span aria-hidden="true">↓</span></a>
         </div>
@@ -74,7 +82,7 @@
         <div class="section-heading reveal">
           <p class="eyebrow">RESERVA LA FECHA</p>
           <h2>Un día <em>inolvidable</em></h2>
-          <span class="section-ornament" aria-hidden="true">✧</span>
+          <span class="section-ornament animate-icon" aria-hidden="true">✧</span>
           <div class="date-display" aria-label="Fecha de la boda">
             <span class="date-month" id="dateMonth">DICIEMBRE</span>
             <span class="date-number" id="dateDay">31</span>
@@ -107,7 +115,7 @@
         <div class="venue-grid">
           <article class="venue-card reveal">
             <div class="venue-head">
-              <span class="venue-number">01</span><span class="venue-art" aria-hidden="true">✧</span>
+              <span class="venue-number">01 / EL SÍ, ACEPTO</span><span class="venue-art animate-icon" aria-hidden="true">✧</span>
               <h3 id="ceremonyTitle">Ceremonia religiosa</h3>
               <p class="venue-hour" id="ceremonyTime">17:00</p>
               <p class="venue-name" id="ceremonyName">Lugar de la ceremonia</p>
@@ -122,7 +130,7 @@
           </article>
           <article class="venue-card reveal">
             <div class="venue-head">
-              <span class="venue-number">02</span><span class="venue-art" aria-hidden="true">❦</span>
+              <span class="venue-number">02 / LA CELEBRACIÓN</span><span class="venue-art animate-icon" aria-hidden="true">❦</span>
               <h3 id="receptionTitle">Recepción</h3>
               <p class="venue-hour" id="receptionTime">19:00</p>
               <p class="venue-name" id="receptionName">Lugar de la recepción</p>
@@ -167,7 +175,7 @@
       </section>
 
       <section class="gift-section section" id="regalos">
-        <img src="assets/botanico.svg" class="floral gift-floral-left" alt="" aria-hidden="true">
+        <img src="assets/floral-vivo.svg" class="floral gift-floral-left" alt="" aria-hidden="true">
         <div class="gift-content reveal">
           <p class="eyebrow">UN DETALLE CON CARIÑO</p>
           <h2>Tu presencia es <em>nuestro mejor regalo</em></h2>
@@ -184,7 +192,7 @@
           <p>Si no puedes estar presente, también podrás compartir este día especial con nosotros.</p>
         </div>
         <div class="zoom-card reveal">
-          <span class="zoom-art" aria-hidden="true">◌</span>
+          <span class="zoom-art animate-icon" aria-hidden="true">✺</span>
           <p class="zoom-time-label">HORA DE LA TRANSMISIÓN</p>
           <p class="zoom-time" id="zoomTime">17:00 (hora de Bolivia)</p>
           <div class="zoom-data">
@@ -197,7 +205,7 @@
       </section>
 
       <section class="rsvp-section section" id="confirmar">
-        <img src="assets/botanico.svg" class="floral rsvp-floral" alt="" aria-hidden="true">
+        <img src="assets/floral-vivo.svg" class="floral rsvp-floral" alt="" aria-hidden="true">
         <div class="rsvp-content reveal">
           <p class="eyebrow">TU PRESENCIA NOS HARÁ FELICES</p>
           <h2>¿Nos <em>acompañas?</em></h2>
@@ -209,7 +217,7 @@
 
       <section class="closing-section section">
         <div class="closing-frame reveal">
-          <span class="closing-ornament" aria-hidden="true">❦</span>
+          <span class="closing-ornament animate-icon" aria-hidden="true">❦</span>
           <p class="handwriting closing-script">Gracias por ser parte de nuestra historia</p>
           <p>Los mejores momentos se vuelven inolvidables cuando los compartimos con quienes queremos.</p>
           <strong class="closing-names">Novia <i>&amp;</i> Novio</strong>
