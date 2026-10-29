@@ -12,6 +12,7 @@
   const bride = names[0] || "Novia", groom = names[1] || "Novio";
   put("nameOne", bride);
   put("nameTwo", groom);
+  put("introNames", bride + " y " + groom);
   const shortDate = [cfg.fecha?.dia || "31", cfg.fecha?.mes || "DICIEMBRE", cfg.fecha?.anio || "2026"];
   put("dateDay", shortDate[0]);
   put("dateMonth", shortDate[1]);
@@ -150,8 +151,39 @@
 
   const overlay = byId("envelopeScreen");
   const open = byId("openInvitation");
+  function releasePetals() {
+    // Partículas originales creadas con CSS, sin recursos externos ni librerías.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const layer = byId("petalLayer");
+    if (!layer) return;
+    const seal = open.getBoundingClientRect();
+    const parent = layer.getBoundingClientRect();
+    const cx = seal.left - parent.left + seal.width / 2;
+    const cy = seal.top - parent.top + seal.height / 2;
+    const palette = ["#E5B1B9", "#F8D4C4", "#A7A0C9", "#797EBA", "#F3C58C", "#D88397"];
+    for (let i = 0; i < 32; i++) {
+      const petal = document.createElement("span");
+      const angle = (i / 32) * Math.PI * 2 + (Math.random() - .5) * .35;
+      const distance = 95 + Math.random() * 240;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance + 45;
+      petal.className = "flying-petal";
+      petal.style.left = cx + "px";
+      petal.style.top = cy + "px";
+      petal.style.setProperty("--petal-x", x.toFixed(1) + "px");
+      petal.style.setProperty("--petal-y", y.toFixed(1) + "px");
+      petal.style.setProperty("--petal-rotate", Math.round(Math.random() * 820 - 410) + "deg");
+      petal.style.setProperty("--petal-color", palette[i % palette.length]);
+      petal.style.setProperty("--petal-width", (8 + Math.random() * 11).toFixed(0) + "px");
+      petal.style.setProperty("--petal-height", (11 + Math.random() * 15).toFixed(0) + "px");
+      petal.style.setProperty("--petal-duration", (800 + Math.random() * 550).toFixed(0) + "ms");
+      layer.appendChild(petal);
+      petal.addEventListener("animationend", () => petal.remove(), {once:true});
+    }
+  }
   open.addEventListener("click", () => {
     if (overlay.classList.contains("is-open")) return;
+    releasePetals();
     overlay.classList.add("is-open");
     document.body.classList.remove("invitation-locked");
     open.disabled = true;
