@@ -3,190 +3,222 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5ef">
-  <meta name="description" content="¡Nos casamos! Acompáñanos a celebrar la boda de Joselito y Hedria el domingo 13 de diciembre de 2026, a las 2:30 p. m. (Bolivia), por Zoom.">
-  <!-- Metadatos para vista previa en WhatsApp y redes sociales -->
-  <link rel="canonical" href="https://jostamht.github.io/Joselito-Hedria/">
+  <meta name="theme-color" content="#f9f7fb">
+  <meta name="description" content="Invitación de boda de muestra: una celebración inolvidable, con ceremonia, recepción, cronograma, galería y confirmación.">
+  <link rel="canonical" href="https://jostamht.github.io/Muestra-Invitacion/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_BO">
-  <meta property="og:site_name" content="La boda de Joselito y Hedria">
-  <meta property="og:url" content="https://jostamht.github.io/Joselito-Hedria/">
-  <meta property="og:title" content="💍 ¡Nos casamos! | Joselito y Hedria">
-  <meta property="og:description" content="13 de diciembre de 2026 · 2:30 p. m. (Bolivia) · Transmisión por Zoom. ¡Nos encantará que nos acompañes!">
-  <meta property="og:image" content="https://jostamht.github.io/Joselito-Hedria/assets/portada-whatsapp.jpg">
-  <meta property="og:image:secure_url" content="https://jostamht.github.io/Joselito-Hedria/assets/portada-whatsapp.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Fotografía de Joselito y Hedria, invitación a su boda">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="💍 ¡Nos casamos! | Joselito y Hedria">
-  <meta name="twitter:description" content="13 de diciembre de 2026 · Transmisión por Zoom.">
-  <meta name="twitter:image" content="https://jostamht.github.io/Joselito-Hedria/assets/portada-whatsapp.jpg">
-  <title>La boda de Joselito y Hedria | 13 de diciembre de 2026</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:url" content="https://jostamht.github.io/Muestra-Invitacion/">
+  <meta property="og:title" content="Nuestra boda | Invitación de muestra">
+  <meta property="og:description" content="Una invitación digital para un día inolvidable · 31 de diciembre de 2026.">
+  <meta name="twitter:card" content="summary">
+  <title>Nuestra boda · Invitación de muestra</title>
+  <link rel="icon" href="assets/favicon-muestra.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261025qr">
-  <script src="config.js" defer></script>
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=demo1">
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body class="invitation-locked">
   <div class="envelope-screen" id="envelopeScreen" role="dialog" aria-modal="true" aria-labelledby="introTitle">
-    <img class="decor intro-left" src="assets/botanico.svg" alt="" aria-hidden="true">
-    <img class="decor intro-right" src="assets/botanico.svg" alt="" aria-hidden="true">
+    <img src="assets/botanico.svg" class="floral intro-floral intro-floral-left" alt="" aria-hidden="true">
+    <img src="assets/botanico.svg" class="floral intro-floral intro-floral-right" alt="" aria-hidden="true">
     <div class="intro-copy">
-      <span class="eyebrow" id="introTitle">UNA INVITACIÓN PARA TI</span>
-      <p class="script">Con muchísimo cariño</p>
+      <span class="eyebrow" id="introTitle">UNA INVITACIÓN ESPECIAL</span>
+      <p class="handwriting">Para celebrar el amor</p>
     </div>
     <div class="envelope-scene">
       <div class="envelope-shadow"></div>
       <div class="envelope">
         <div class="envelope-back"></div>
         <div class="envelope-letter">
-          <span class="letter-flourish">❦</span>
-          <span class="letter-monogram">J <i>&amp;</i> H</span>
-          <span class="letter-small">NOS CASAMOS</span>
+          <span class="letter-flourish" aria-hidden="true">❦</span>
+          <span class="letter-initials">N <i>&amp;</i> N</span>
+          <span class="letter-caption">NUESTRA BODA</span>
         </div>
         <div class="envelope-flap"></div>
         <div class="envelope-front"></div>
-        <button class="wax-seal" id="openInvitation" type="button" aria-label="Abrir invitación">
-          <span>J<i>&amp;</i>H</span>
-        </button>
+        <button id="openInvitation" class="wax-seal" type="button" aria-label="Abrir invitación"><span>N<i>&amp;</i>N</span></button>
       </div>
     </div>
-    <p class="intro-footnote">Toca el sello para abrir nuestra invitación</p>
+    <p class="intro-hint">Toca el sello para abrir la invitación</p>
   </div>
 
-  <div class="site-shell" id="invitation">
+  <div class="site-shell" id="invitation" aria-hidden="true">
     <header class="topbar">
-      <a class="brand" href="#inicio" aria-label="Volver al inicio">J <i>&amp;</i> H</a>
-      <span class="header-date">13 · 12 · 2026</span>
-      <button class="music-control" id="musicToggle" type="button" disabled aria-label="Música pendiente">
-        <span aria-hidden="true">♫</span> <span id="musicLabel">Música próximamente</span>
+      <a class="monogram-small" href="#inicio" aria-label="Ir al inicio">N <i>&amp;</i> N</a>
+      <span class="top-date" id="navDate">31 · 12 · 2026</span>
+      <button type="button" id="musicToggle" class="music-toggle" aria-label="Música no disponible" disabled>
+        <span aria-hidden="true">♫</span><span id="musicLabel">Sin música</span>
       </button>
     </header>
 
     <main>
       <section class="hero section" id="inicio">
-        <img class="decor hero-left" src="assets/botanico.svg" alt="" aria-hidden="true">
-        <img class="decor hero-right" src="assets/botanico.svg" alt="" aria-hidden="true">
+        <img src="assets/botanico.svg" class="floral hero-floral-left" alt="" aria-hidden="true">
+        <img src="assets/botanico.svg" class="floral hero-floral-right" alt="" aria-hidden="true">
         <div class="hero-content">
-          <div class="monogram">J <i>&amp;</i> H</div>
-          <p class="eyebrow">CON ALEGRÍA EN EL CORAZÓN</p>
-          <p class="hero-script">¡Nos casamos!</p>
-          <h1><span id="nameOne">Joselito</span><em>y</em><span id="nameTwo">Hedria</span></h1>
-          <div class="ornament"><span></span>❦<span></span></div>
-          <p class="hero-quote">“Hay momentos en la vida que son inolvidables, y compartirlos con ustedes los hace aún más especiales. ¡Nos casamos y queremos que veas ese momento!”</p>
-          <a href="#fecha" class="discover">DESCUBRE NUESTRA INVITACIÓN <span aria-hidden="true">↓</span></a>
+          <p class="eyebrow">DOS CORAZONES · UN NUEVO COMIENZO</p>
+          <p class="handwriting hero-script">¡Nos casamos!</p>
+          <h1><span id="nameOne">Novia</span><em>y</em><span id="nameTwo">Novio</span></h1>
+          <div class="flourish" aria-hidden="true"><span></span>❦<span></span></div>
+          <p class="hero-message">Con mucha alegría queremos compartir contigo uno de los días más especiales de nuestras vidas.</p>
+          <p class="hero-date" id="heroDate">JUEVES · 31 DE DICIEMBRE · 2026</p>
+          <a class="scroll-link" href="#fecha">DESCUBRE LA INVITACIÓN <span aria-hidden="true">↓</span></a>
         </div>
       </section>
 
       <section class="date-section section" id="fecha">
         <div class="section-heading reveal">
-          <span class="eyebrow">RESERVA LA FECHA</span>
-          <h2>Un día <em>muy especial</em></h2>
-          <div class="thin-floral">❧</div>
-          <div class="date-display">
-            <span class="month">DICIEMBRE</span>
-            <span class="day">13</span>
-            <span class="year">2026 · DOMINGO</span>
+          <p class="eyebrow">RESERVA LA FECHA</p>
+          <h2>Un día <em>inolvidable</em></h2>
+          <span class="section-ornament" aria-hidden="true">✧</span>
+          <div class="date-display" aria-label="Fecha de la boda">
+            <span class="date-month" id="dateMonth">DICIEMBRE</span>
+            <span class="date-number" id="dateDay">31</span>
+            <span class="date-year" id="dateYear">2026 · JUEVES</span>
           </div>
-          <p class="date-invitation">Será un honor compartir este momento contigo, sin importar la distancia.</p>
+          <p class="intro-paragraph">La felicidad se multiplica cuando se comparte. Nos encantará celebrar este momento contigo.</p>
         </div>
       </section>
 
-      <section class="countdown-section section">
+      <section class="count-section section" id="cuenta-regresiva">
         <div class="section-heading reveal">
-          <span class="eyebrow">EL GRAN DÍA SE ACERCA</span>
+          <p class="eyebrow">EL GRAN DÍA SE ACERCA</p>
           <h2>La cuenta <em>regresiva</em></h2>
         </div>
-        <div class="countdown reveal" id="countdown" role="timer" aria-label="Tiempo restante para la boda">
-          <div class="count-item"><strong id="days">--</strong><small>DÍAS</small></div>
-          <span class="count-separator">·</span>
-          <div class="count-item"><strong id="hours">--</strong><small>HORAS</small></div>
-          <span class="count-separator">·</span>
-          <div class="count-item"><strong id="minutes">--</strong><small>MINUTOS</small></div>
-          <span class="count-separator">·</span>
+        <div class="countdown reveal" id="countdown" aria-label="Tiempo restante hasta la boda" role="timer">
+          <div class="count-item"><strong id="days">--</strong><small>DÍAS</small></div><span class="count-sep">·</span>
+          <div class="count-item"><strong id="hours">--</strong><small>HORAS</small></div><span class="count-sep">·</span>
+          <div class="count-item"><strong id="minutes">--</strong><small>MINUTOS</small></div><span class="count-sep">·</span>
           <div class="count-item"><strong id="seconds">--</strong><small>SEGUNDOS</small></div>
         </div>
-        <p class="count-finished" id="countdownDone" hidden>¡Hoy es nuestro gran día!</p>
+        <p class="finished-msg" id="countdownDone" hidden>¡Llegó el gran día!</p>
       </section>
 
-      <section class="verse-section section">
-        <div class="verse-card reveal">
-          <div class="verse-flourish" aria-hidden="true">❦</div>
-          <blockquote>“Así que ya no son dos, sino una sola carne. Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre”.</blockquote>
-          <p class="verse-source">MATEO 19:6</p>
+      <section class="places-section section" id="lugares">
+        <div class="section-heading reveal">
+          <p class="eyebrow">DOS MOMENTOS MUY ESPECIALES</p>
+          <h2>Ceremonia <em>&amp; recepción</em></h2>
+          <p>Todo lo que necesitas para acompañarnos en nuestra celebración.</p>
+        </div>
+        <div class="venue-grid">
+          <article class="venue-card reveal">
+            <div class="venue-head">
+              <span class="venue-number">01</span><span class="venue-art" aria-hidden="true">✧</span>
+              <h3 id="ceremonyTitle">Ceremonia religiosa</h3>
+              <p class="venue-hour" id="ceremonyTime">17:00</p>
+              <p class="venue-name" id="ceremonyName">Lugar de la ceremonia</p>
+              <p class="venue-address" id="ceremonyAddress">Insertar dirección</p>
+            </div>
+            <div class="map-box" id="ceremonyMapBox">
+              <div class="map-placeholder" id="ceremonyMapPlaceholder"><span class="map-pin" aria-hidden="true">⌖</span><strong>Ubicación de la ceremonia</strong><small>Mapa de Google Maps por agregar</small></div>
+              <iframe id="ceremonyMap" title="Mapa de la ceremonia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
+            </div>
+            <a class="outline-btn" id="ceremonyDirections" href="#" target="_blank" rel="noopener noreferrer" hidden>VER EN GOOGLE MAPS ↗</a>
+            <span class="outline-btn disabled-btn" id="ceremonyDirectionsPending">ENLACE DE MAPS PENDIENTE</span>
+          </article>
+          <article class="venue-card reveal">
+            <div class="venue-head">
+              <span class="venue-number">02</span><span class="venue-art" aria-hidden="true">❦</span>
+              <h3 id="receptionTitle">Recepción</h3>
+              <p class="venue-hour" id="receptionTime">19:00</p>
+              <p class="venue-name" id="receptionName">Lugar de la recepción</p>
+              <p class="venue-address" id="receptionAddress">Insertar dirección</p>
+            </div>
+            <div class="map-box" id="receptionMapBox">
+              <div class="map-placeholder" id="receptionMapPlaceholder"><span class="map-pin" aria-hidden="true">⌖</span><strong>Ubicación de la recepción</strong><small>Mapa de Google Maps por agregar</small></div>
+              <iframe id="receptionMap" title="Mapa de la recepción" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
+            </div>
+            <a class="outline-btn" id="receptionDirections" href="#" target="_blank" rel="noopener noreferrer" hidden>VER EN GOOGLE MAPS ↗</a>
+            <span class="outline-btn disabled-btn" id="receptionDirectionsPending">ENLACE DE MAPS PENDIENTE</span>
+          </article>
         </div>
       </section>
 
-      <section class="photo-section section">
-        <div class="photo-layout">
-          <figure class="photo-frame reveal">
-            <img id="mainPhoto" src="assets/foto-pendiente.svg" alt="Joselito y Hedria juntos" loading="lazy">
-            <figcaption>Te esperamos</figcaption>
-          </figure>
-          <div class="photo-copy reveal">
-            <span class="eyebrow">CERCA, AUNQUE ESTEMOS LEJOS</span>
-            <h2>Acompáñanos <em>desde donde estés</em></h2>
-            <div class="small-flourish">✧</div>
-            <p>Nos hará muy felices compartir contigo uno de los días más importantes de nuestras vidas.</p>
-            <p class="signature">Con cariño,<br><span>Joselito y Hedria</span></p>
-          </div>
+      <section class="timeline-section section" id="cronograma">
+        <div class="section-heading reveal">
+          <p class="eyebrow">CADA INSTANTE CUENTA</p>
+          <h2>Nuestro <em>cronograma</em></h2>
+          <p>Una noche llena de momentos para recordar.</p>
+        </div>
+        <div class="timeline reveal" id="timeline">
+          <div class="timeline-item"><time>19:30</time><span class="timeline-dot"></span><p>Entrada de los novios</p></div>
+          <div class="timeline-item"><time>20:00</time><span class="timeline-dot"></span><p>Vals</p></div>
+          <div class="timeline-item"><time>20:30</time><span class="timeline-dot"></span><p>Cena</p></div>
+          <div class="timeline-item"><time>21:30</time><span class="timeline-dot"></span><p>Corte de torta</p></div>
+          <div class="timeline-item"><time>23:30</time><span class="timeline-dot"></span><p>Despedida</p></div>
+        </div>
+      </section>
+
+      <section class="gallery-section section" id="galeria">
+        <div class="section-heading reveal">
+          <p class="eyebrow">RECUERDOS QUE ATESORAMOS</p>
+          <h2>Nuestra pequeña <em>galería</em></h2>
+          <p>Un espacio para los momentos más bonitos de nuestra historia.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-frame reveal"><img id="galleryOne" src="assets/foto-muestra.svg" alt="Espacio para la fotografía uno" loading="lazy"><figcaption>UN RECUERDO ESPECIAL</figcaption></figure>
+          <figure class="gallery-frame reveal"><img id="galleryTwo" src="assets/foto-muestra.svg" alt="Espacio para la fotografía dos" loading="lazy"><figcaption>NUESTROS MOMENTOS</figcaption></figure>
+          <figure class="gallery-frame reveal"><img id="galleryThree" src="assets/foto-muestra.svg" alt="Espacio para la fotografía tres" loading="lazy"><figcaption>UN NUEVO COMIENZO</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="gift-section section" id="regalos">
+        <img src="assets/botanico.svg" class="floral gift-floral-left" alt="" aria-hidden="true">
+        <div class="gift-content reveal">
+          <p class="eyebrow">UN DETALLE CON CARIÑO</p>
+          <h2>Tu presencia es <em>nuestro mejor regalo</em></h2>
+          <p>Lo más importante es compartir este día contigo. Si deseas hacernos llegar un detalle, aquí podrás encontrar un código QR para hacerlo.</p>
+          <div class="gift-qr"><img id="giftQr" src="assets/qr-muestra.svg" alt="Espacio reservado para el código QR de regalos"></div>
+          <p class="mini-hint" id="qrHint">ESPACIO PARA AGREGAR TU CÓDIGO QR</p>
         </div>
       </section>
 
       <section class="zoom-section section" id="zoom">
         <div class="section-heading reveal">
-          <span class="eyebrow">CELEBREMOS JUNTOS</span>
-          <h2>Te esperamos <em>por Zoom</em></h2>
-          <p>La ceremonia será transmitida en vivo para que puedas acompañarnos desde donde te encuentres.</p>
+          <p class="eyebrow">TAMBIÉN A LA DISTANCIA</p>
+          <h2>Acompáñanos <em>por Zoom</em></h2>
+          <p>Si no puedes estar presente, también podrás compartir este día especial con nosotros.</p>
         </div>
-        <div class="time-card reveal">
-          <div class="time-card-top">DOMINGO 13 DE DICIEMBRE DE 2026</div>
-          <div class="time-zones">
-            <div><span class="zone-label">HORA DE BOLIVIA</span><strong>2:30 <small>p. m.</small></strong></div>
-            <div class="time-divider"></div>
-            <div><span class="zone-label">HORA DE BRASIL</span><strong>3:30 <small>p. m.</small></strong></div>
+        <div class="zoom-card reveal">
+          <span class="zoom-art" aria-hidden="true">◌</span>
+          <p class="zoom-time-label">HORA DE LA TRANSMISIÓN</p>
+          <p class="zoom-time" id="zoomTime">17:00 (hora de Bolivia)</p>
+          <div class="zoom-data">
+            <div><small>ID DE REUNIÓN</small><strong id="zoomId">Insertar ID</strong></div>
+            <div><small>CONTRASEÑA</small><strong id="zoomPassword">Insertar contraseña</strong></div>
           </div>
-          <div class="zoom-note">
-            <span class="zoom-flower" aria-hidden="true">❧</span>
-            <p><strong>Modalidad: transmisión por Zoom.</strong><br>El enlace para acompañarnos será enviado días antes.</p>
-            <a class="zoom-button" id="zoomLink" href="#" target="_blank" rel="noopener noreferrer" hidden>INGRESAR A LA TRANSMISIÓN ↗</a>
-            <span class="zoom-pending" id="zoomPending">ENLACE DISPONIBLE PRÓXIMAMENTE</span>
-          </div>
+          <a id="zoomJoin" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer" hidden>UNIRSE A ZOOM ↗</a>
+          <span id="zoomPending" class="outline-btn disabled-btn">ENLACE DE ZOOM PENDIENTE</span>
         </div>
       </section>
 
-      <section class="gift-section section" id="regalos">
-        <img class="decor gift-left" src="assets/botanico.svg" alt="" aria-hidden="true">
-        <img class="decor gift-right" src="assets/botanico.svg" alt="" aria-hidden="true">
-        <div class="gift-content reveal">
-          <span class="eyebrow">SI DESEAS TENER UN DETALLE</span>
-          <h2>Un detalle <em>con cariño</em></h2>
-          <p>Nos alegra poder compartir este momento tan especial contigo, incluso a la distancia. Si deseas hacernos llegar un detalle, aquí encontrarás una manera de hacerlo.</p>
-          <div class="qr-mat">
-            <a href="assets/qr-banco-union.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir código QR para ampliarlo">
-              <img id="giftQr" src="assets/qr-banco-union.jpg" alt="Código QR de Banco Unión para enviar un detalle a los novios">
-            </a>
-          </div>
-          <small class="qr-caption" id="giftQrLabel">TOCA EL QR PARA AMPLIARLO</small>
+      <section class="rsvp-section section" id="confirmar">
+        <img src="assets/botanico.svg" class="floral rsvp-floral" alt="" aria-hidden="true">
+        <div class="rsvp-content reveal">
+          <p class="eyebrow">TU PRESENCIA NOS HARÁ FELICES</p>
+          <h2>¿Nos <em>acompañas?</em></h2>
+          <p>Confirma tu asistencia por WhatsApp. Será una alegría saber que estaremos juntos en este día tan especial.</p>
+          <a class="primary-btn" id="whatsappRSVP" href="#" target="_blank" rel="noopener noreferrer" hidden>CONFIRMAR POR WHATSAPP ↗</a>
+          <span class="primary-btn disabled-btn" id="rsvpPending">CONFIRMACIÓN POR WHATSAPP · PENDIENTE</span>
         </div>
       </section>
 
       <section class="closing-section section">
-        <div class="closing-card reveal">
-          <div class="closing-floral">❦</div>
-          <p class="closing-script">Gracias por ser parte de nuestra historia</p>
-          <p>El cariño no conoce distancias. Tu compañía hará todavía más especial este día.</p>
-          <div class="closing-names"> Te Esperamos</div>
-          <span class="closing-date">13 · DICIEMBRE · 2026</span>
+        <div class="closing-frame reveal">
+          <span class="closing-ornament" aria-hidden="true">❦</span>
+          <p class="handwriting closing-script">Gracias por ser parte de nuestra historia</p>
+          <p>Los mejores momentos se vuelven inolvidables cuando los compartimos con quienes queremos.</p>
+          <strong class="closing-names">Novia <i>&amp;</i> Novio</strong>
+          <span class="closing-date" id="closingDate">31 · DICIEMBRE · 2026</span>
         </div>
       </section>
     </main>
-    <footer><span>J <i>&amp;</i> H</span><p>UNA INVITACIÓN HECHA CON AMOR</p></footer>
+
+    <footer class="footer"><span>N <i>&amp;</i> N</span><p>INVITACIÓN DEMOSTRATIVA · DATOS FICTICIOS</p></footer>
   </div>
   <audio id="weddingAudio" loop preload="none"></audio>
 </body>
