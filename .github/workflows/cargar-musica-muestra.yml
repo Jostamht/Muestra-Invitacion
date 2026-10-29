@@ -1,0 +1,42 @@
+name: Incorporar música de muestra
+on:
+  push:
+    paths:
+      - ".github/workflows/cargar-musica-muestra.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  musica:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Descargar MP3 enviado para la invitación
+        env:
+          AUDIO_SOURCE: "https://at.adobe.com/z4NQi83VxUHRXh9C"
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          curl --fail --location --retry 2 --connect-timeout 15 --max-time 130 --header "Accept: audio/mpeg,application/octet-stream" --output assets/musica.mp3 "$AUDIO_SOURCE"
+          bytes="$(wc -c < assets/musica.mp3)"
+          mime="$(file -b --mime-type assets/musica.mp3)"
+          echo "Audio recibido: ${bytes} bytes (${mime})"
+          test "$bytes" -gt 100000
+          if [ "$mime" != "audio/mpeg" ] && [ "$mime" != "audio/mp3" ] && [ "$mime" != "application/octet-stream" ]; then
+            echo "::error::La descarga no devolvió un MP3, sino ${mime}"
+            exit 1
+          fi
+      - name: Guardar archivo sin modificar el resto
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/musica.mp3
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: incorporar melodía MP3 a la invitación de muestra"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
