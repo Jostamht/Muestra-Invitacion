@@ -1,14 +1,49 @@
-// Datos de la invitación oficial. Modifica únicamente los campos que necesites.
+// PLANTILLA DE INVITACIÓN · Todos los datos de esta demostración son ficticios.
+// Edita los campos y guarda para adaptar la invitación a cada pareja.
 window.WEDDING_CONFIG = {
-  nombres: ["Joselito", "Hedria"],
-  fecha: "2026-12-13T14:30:00-04:00", // Bolivia, 2:30 p. m.; Brasil (Brasilia), 3:30 p. m.
+  novios: ["Novia", "Novio"],
+  fechaISO: "2026-12-31T17:00:00-04:00", // Fecha y hora de la cuenta regresiva (UTC-04)
+  fecha: { dia: "31", mes: "DICIEMBRE", anio: "2026", semana: "JUEVES" },
+  ceremonia: {
+    titulo: "Ceremonia religiosa",
+    hora: "17:00",
+    lugar: "Lugar de la ceremonia",
+    direccion: "Insertar dirección",
+    googleMaps: "", // Enlace para abrir Google Maps, ej. https://maps.app.goo.gl/...
+    mapaEmbed: "" // URL del iframe de Google Maps: https://www.google.com/maps/embed?pb=...
+  },
+  recepcion: {
+    titulo: "Recepción",
+    hora: "19:00",
+    lugar: "Lugar de la recepción",
+    direccion: "Insertar dirección",
+    googleMaps: "",
+    mapaEmbed: ""
+  },
+  cronograma: [
+    { hora: "19:30", evento: "Entrada de los novios" },
+    { hora: "20:00", evento: "Vals" },
+    { hora: "20:30", evento: "Cena" },
+    { hora: "21:30", evento: "Corte de torta" },
+    { hora: "23:30", evento: "Despedida" }
+  ],
+  galeria: [
+    "assets/foto-muestra.svg",
+    "assets/foto-muestra.svg",
+    "assets/foto-muestra.svg"
+  ],
+  regalos: {
+    qr: "" // Sube la imagen y escribe "assets/qr-regalos.png"; vacío = ilustración de ejemplo
+  },
   zoom: {
-    enlace: "" // Se enviará días antes; al completar aquí aparecerá el botón
+    hora: "17:00 (hora de Bolivia)",
+    id: "", // ID de reunión
+    contrasena: "", // Contraseña de reunión
+    enlace: "" // Enlace https:// de Zoom; botón aparecerá solo si se completa
   },
-  fotos: {
-    principal: "assets/hedria-joselito.webp", // Fotografía oficial de la pareja
-    qrRegalos: "assets/qr-banco-union.jpg" // QR oficial enviado para los regalos
+  whatsapp: {
+    numero: "", // Ej. 59171234567 sin + ni espacios. Vacío = botón desactivado
+    mensaje: "¡Hola! Quisiera confirmar mi asistencia a la boda."
   },
-  qrConfirmado: true, // QR oficial incorporado
-  musica: "assets/musica.mp3" // MP3 alojado en el repositorio para reproducción directa
+  musica: "" // Sube un MP3 y configura "assets/musica.mp3". Vacío = sin música
 };
