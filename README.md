@@ -19,6 +19,9 @@ Incluye ilustración vectorial floral en `assets/floral-vivo.svg`, animación fl
 ## Contenido de la invitación
 - Portada animada con invitación explícita a tocar el sello.
 - Nombres, fecha ficticia y cuenta regresiva.
+- Padres de la novia y del novio, con cuatro campos editables.
+- Código de vestimenta formal separado para mujeres y hombres, con recomendaciones e ilustraciones.
+- Botón de música flotante y siempre visible al navegar, con acciones claras para reproducir y pausar.
 - Ceremonia religiosa y recepción con **dos direcciones, dos enlaces a Google Maps y dos mapas incrustables**.
 - Cronograma de cinco momentos: entrada de los novios, vals, cena, corte de torta y despedida.
 - Fotografía principal de los novios en la portada; galería de tres fotografías de relleno, fáciles de reemplazar.
@@ -30,7 +33,12 @@ Incluye ilustración vectorial floral en `assets/floral-vivo.svg`, animación fl
 ## Personalización
 Para preparar una invitación real, modifica únicamente los datos de [config.js](config.js):
 
-`novios`, `fotoPortada`, `fechaISO`, `fecha`, `ceremonia`, `recepcion`, `cronograma`, `galeria`, `regalos.qr`, `zoom`, `whatsapp`, `musica`.
+`novios`, `fotoPortada`, `padres`, `vestimenta`, `fechaISO`, `fecha`, `ceremonia`, `recepcion`, `cronograma`, `galeria`, `regalos.qr`, `zoom`, `whatsapp`, `musica`.
+
+### Padres y vestimenta
+En `config.js`, completa los cuatro campos de `padres.novia` y `padres.novio`, y edita el objeto `vestimenta` (tipo de vestimenta y recomendaciones para mujeres y hombres). Los valores actuales son ejemplos; no representan personas reales.
+
+El control de música queda visible en la esquina inferior mientras los visitantes recorren la página, con el estado «Pausar música» cuando está sonando y «Reproducir música» cuando se detiene.
 
 ### Mapas
 Busca la ubicación en Google Maps, selecciona Compartir → Insertar un mapa y copia la URL `src` de Google Maps en `mapaEmbed`. Especifica aparte el enlace de ubicación en `googleMaps`. No pegues etiquetas `iframe` completas.
