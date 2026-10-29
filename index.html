@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=whatsapp20261029">
+  <link rel="stylesheet" href="styles.css?v=parents-dress-music20261029">
   <script defer src="config.js"></script>
   <script defer src="script.js"></script>
 </head>
@@ -69,8 +69,12 @@
     <header class="topbar">
       <a class="monogram-small" href="#inicio" aria-label="Ir al inicio">N <i>&amp;</i> N</a>
       <span class="top-date" id="navDate">31 · 12 · 2026</span>
-      <button type="button" id="musicToggle" class="music-toggle" aria-label="Música no disponible" disabled>
-        <span aria-hidden="true">♫</span><span id="musicLabel">Sin música</span>
+      <button type="button" id="musicToggle" class="music-toggle" aria-label="Música no disponible" aria-pressed="false" disabled>
+        <span class="music-control-icon" aria-hidden="true">
+          <svg class="music-play-symbol" viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 12 7-12 7V5z"/></svg>
+          <svg class="music-pause-symbol" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg>
+        </span>
+        <span class="music-control-copy"><strong id="musicLabel">Música no disponible</strong><small id="musicHint">Control de audio</small></span>
       </button>
     </header>
 
@@ -105,6 +109,31 @@
             <span class="date-year" id="dateYear">2026 · JUEVES</span>
           </div>
           <p class="intro-paragraph">La felicidad se multiplica cuando se comparte. Nos encantará celebrar este momento contigo.</p>
+        </div>
+      </section>
+
+      <section class="parents-section section" id="padres">
+        <img src="assets/floral-vivo.svg" class="floral parents-floral" alt="" aria-hidden="true">
+        <div class="section-heading reveal">
+          <p class="eyebrow">CON EL CARIÑO DE NUESTRAS FAMILIAS</p>
+          <h2>Los padres de <em>los novios</em></h2>
+          <p>Con amor y gratitud, compartimos la alegría de este día junto a quienes nos han acompañado en cada paso.</p>
+        </div>
+        <div class="parents-grid">
+          <article class="parents-card reveal">
+            <span class="parents-card-icon" aria-hidden="true">❦</span>
+            <p class="parents-card-label">PADRES DE LA NOVIA</p>
+            <p class="parent-person" id="brideFather">Padre de la novia</p>
+            <span class="parents-join" aria-hidden="true">&amp;</span>
+            <p class="parent-person" id="brideMother">Madre de la novia</p>
+          </article>
+          <article class="parents-card reveal">
+            <span class="parents-card-icon" aria-hidden="true">❦</span>
+            <p class="parents-card-label">PADRES DEL NOVIO</p>
+            <p class="parent-person" id="groomFather">Padre del novio</p>
+            <span class="parents-join" aria-hidden="true">&amp;</span>
+            <p class="parent-person" id="groomMother">Madre del novio</p>
+          </article>
         </div>
       </section>
 
@@ -160,6 +189,40 @@
             <span class="outline-btn disabled-btn" id="receptionDirectionsPending">ENLACE DE MAPS PENDIENTE</span>
           </article>
         </div>
+      </section>
+
+      <section class="dress-section section" id="vestimenta">
+        <div class="section-heading reveal">
+          <p class="eyebrow">PARA CELEBRAR CON ESTILO</p>
+          <h2>Código de <em>vestimenta</em></h2>
+          <p class="dress-type" id="dressType">FORMAL</p>
+        </div>
+        <div class="dress-grid">
+          <article class="dress-card reveal">
+            <div class="dress-illustration" aria-hidden="true">
+              <svg viewBox="0 0 120 134" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M49 14 60 26 71 14l13 11 15 19-17 12-8-13v18l24 54H22l24-54V43l-8 13-17-12 15-19 13-11Z"/>
+                <path d="m49 14 11-4 11 4M51 30c5 6 13 6 18 0M46 61h28M60 74v28"/>
+              </svg>
+            </div>
+            <p class="eyebrow">PARA ELLAS</p>
+            <h3>Mujeres</h3>
+            <p id="dressWomen">Vestido largo o de cóctel elegante.</p>
+          </article>
+          <article class="dress-card reveal">
+            <div class="dress-illustration" aria-hidden="true">
+              <svg viewBox="0 0 120 134" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M41 17 60 28 79 17l20 15 9 83H12l9-83 20-15Z"/>
+                <path d="m41 17 8 31-9 16 20 22 20-22-9-16 8-31M60 28v50"/>
+                <path d="m54 29 6 9 6-9M60 38l-5 25 5 7 5-7-5-25M27 62l5 53M93 62l-5 53"/>
+              </svg>
+            </div>
+            <p class="eyebrow">PARA ELLOS</p>
+            <h3>Hombres</h3>
+            <p id="dressMen">Traje formal con camisa y corbata.</p>
+          </article>
+        </div>
+        <p class="dress-note reveal" id="dressNote">Elige un atuendo con el que te sientas cómodo y elegante para celebrar con nosotros.</p>
       </section>
 
       <section class="timeline-section section" id="cronograma">
