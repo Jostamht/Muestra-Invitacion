@@ -1,41 +1,50 @@
-# Invitación de boda · Plantilla demostrativa 💜
+# Invitación de boda · Muestra floral 💐
 
-**Demo:** https://jostamht.github.io/Muestra-Invitacion/
+**Vista previa:** https://jostamht.github.io/Muestra-Invitacion/
 
-Sitio estático de ejemplo con diseño botánico/editorial, colores lavanda (**#B3AAD3**), ciruela (**#7B587B**), plateado (**#A5B6C0**) y blanco (**#FFFFFF**). Los nombres «Novia y Novio», las fechas, horarios y eventos son ficticios. No es un catálogo de servicios ni una página comercial.
+Esta es una invitación digital de demostración. No es una página comercial: representa cómo podría quedar la web de una pareja real. Los nombres «Novia» y «Novio», la fecha del 31 de diciembre de 2026 y los horarios son ficticios.
 
-## Qué incluye
-- Sobre animado con sello y portada adaptable a móvil.
-- Cuenta regresiva a la boda de muestra (jueves **31 de diciembre de 2026**).
-- Ceremonia religiosa y recepción, cada una con dirección, enlace a Google Maps y espacio para un mapa incrustado.
-- Cronograma editable: entrada de los novios, vals, cena, corte de torta y despedida.
-- Galería de tres fotografías de ejemplo, listas para reemplazar.
-- Regalos y código QR de ejemplo (el actual NO es escaneable).
-- Zoom: hora, ID, contraseña y enlace.
-- Botón RSVP por WhatsApp, desactivado hasta configurar el número.
-- Música opcional, desactivada hasta añadir un archivo MP3.
+## Diseño
+La paleta fue seleccionada a partir de una referencia visual de atardecer:
+- Azul profundo: `#3C487C`
+- Azul lavanda: `#797EBA`
+- Lavanda suave: `#A7A0C9`
+- Durazno claro: `#F8D4C4`
+- Rosa empolvado: `#E5B1B9`
 
-## Cómo editar la muestra
-Abre [config.js](config.js). **Ahí se cambian todos los datos de la invitación:**
-- `novios`, `fechaISO` y `fecha` (mantén ambos campos de fecha sincronizados).
-- `ceremonia` y `recepcion`: `hora`, `lugar`, `direccion`, `googleMaps` y `mapaEmbed`.
-- `cronograma`: arreglo de objetos con `hora` y `evento`.
-- `galeria`: las tres rutas de imágenes (sube JPG, PNG o WebP a `assets/`).
-- `regalos.qr`: ruta del QR real si se desea agregar.
-- `zoom.hora`, `zoom.id`, `zoom.contrasena` y `zoom.enlace`.
-- `whatsapp.numero` (ej.: `59171234567`, sin signo +) y `whatsapp.mensaje`.
-- `musica`: ruta del archivo MP3, por ejemplo `assets/musica.mp3`.
+Acentos complementarios: crema `#FFF9F5`, coral `#C87578`, verde salvia `#8A9C90` y dorado suave `#CDA980`.
 
-Los campos vacíos no generan enlaces falsos: se muestran como pendientes.
+Incluye ilustración vectorial floral en `assets/floral-vivo.svg`, animación flotante y pulso del sello, pétalos al abrir el sobre, iconos con movimiento suave y alternativas para reducir movimiento según preferencias del navegador.
 
-### Cómo incrustar los mapas
-En Google Maps, busca el lugar → **Compartir** → **Insertar un mapa** → copia el `src` HTTPS del `iframe`. Pégalo en `mapaEmbed`. En `googleMaps`, utiliza el enlace para abrir la ubicación en Google Maps. Las dos ubicaciones se configuran por separado.
+## Contenido de la invitación
+- Portada animada con invitación explícita a tocar el sello.
+- Nombres, fecha ficticia y cuenta regresiva.
+- Ceremonia religiosa y recepción con **dos direcciones, dos enlaces a Google Maps y dos mapas incrustables**.
+- Cronograma de cinco momentos: entrada de los novios, vals, cena, corte de torta y despedida.
+- Galería de tres fotografías de relleno, fáciles de reemplazar.
+- Nota de regalos con QR no escaneable de ejemplo.
+- Zoom (hora, ID, contraseña y enlace).
+- RSVP por WhatsApp, inicialmente inactivo.
+- Música opcional, inicialmente inactiva hasta subir un MP3.
 
-### Cómo activar la música
-Sube tu MP3 a la carpeta `assets/` y cambia `musica: ""` por `musica: "assets/musica.mp3"`. Al tocar el sello la página intentará reproducirla; si el navegador bloquea el inicio automático, el visitante podrá usar el botón de música.
+## Personalización
+Para preparar una invitación real, modifica únicamente los datos de [config.js](config.js):
 
-### Google Pages
-Ve a [Settings → Pages](https://github.com/Jostamht/Muestra-Invitacion/settings/pages), selecciona `Deploy from a branch`, `main`, `/(root)` y guarda si todavía no está activo.
+`novios`, `fechaISO`, `fecha`, `ceremonia`, `recepcion`, `cronograma`, `galeria`, `regalos.qr`, `zoom`, `whatsapp`, `musica`.
 
-## Importante: privacidad y repositorio de demostración
-El contenido **actual** ya no contiene fotografías, el QR ni la canción de la boda real. Sin embargo, al tratarse de una copia de otro repositorio, **los commits anteriores pueden conservar esos archivos en el historial Git**, aunque se hayan borrado de la rama actual. Para distribuir públicamente una plantilla sin ese historial, conviene crear un repositorio nuevo y limpio con solo los archivos actuales. Los datos sensibles de Zoom/WhatsApp no deben publicarse sin consentimiento.
+### Mapas
+Busca la ubicación en Google Maps, selecciona Compartir → Insertar un mapa y copia la URL `src` de Google Maps en `mapaEmbed`. Especifica aparte el enlace de ubicación en `googleMaps`. No pegues etiquetas `iframe` completas.
+
+### Fotografías y QR
+Sube JPG/PNG/WebP a `assets/` y cambia las rutas en `galeria` o `regalos.qr`. Los archivos de relleno son `assets/foto-muestra.svg` y `assets/qr-muestra.svg`, y el QR de relleno no permite realizar depósitos.
+
+### Audio
+Sube un MP3 a `assets/` y cambia `musica: ""` por `musica: "assets/musica.mp3"`. El reproductor intentará iniciarse con el toque del sello; si el navegador lo impide, el invitado puede reproducirlo desde el botón.
+
+### Confirmar asistencia
+Completa `whatsapp.numero` en formato internacional, sin el signo `+` (ejemplo ficticio: `59171234567`). El botón permanecerá inactivo hasta configurarlo.
+
+## Publicación
+Se puede habilitar GitHub Pages desde [Settings → Pages](https://github.com/Jostamht/Muestra-Invitacion/settings/pages) con Source = Deploy from a branch, Branch = main y Folder = /(root).
+
+**Nota de privacidad:** el proyecto fue clonado de una invitación real. Aunque los archivos de la rama actual son neutros, el historial anterior de Git puede conservar archivos personales. Para distribuir el código como plantilla pública con historial limpio, crea otro repositorio que incluya solo los archivos actuales.
