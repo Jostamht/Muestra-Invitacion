@@ -3,6 +3,16 @@
 window.WEDDING_CONFIG = {
   novios: ["Novia", "Novio"],
   fotoPortada: "assets/foto-muestra.svg", // Fotografía principal: reemplaza con "assets/foto-portada.jpg"
+  padres: { // Nombres de ejemplo, editables para cada boda
+    novia: { padre: "Padre de la novia", madre: "Madre de la novia" },
+    novio: { padre: "Padre del novio", madre: "Madre del novio" }
+  },
+  vestimenta: {
+    tipo: "Formal",
+    mujeres: "Vestido largo o de cóctel elegante.",
+    hombres: "Traje formal con camisa y corbata.",
+    nota: "Elige un atuendo con el que te sientas cómodo y elegante para celebrar con nosotros."
+  },
   fechaISO: "2026-12-31T17:00:00-04:00", // Fecha y hora de la cuenta regresiva (UTC-04)
   fecha: { dia: "31", mes: "DICIEMBRE", anio: "2026", semana: "JUEVES" },
   ceremonia: {
