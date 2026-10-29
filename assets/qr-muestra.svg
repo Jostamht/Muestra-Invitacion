@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+<rect width="480" height="480" fill="#f7f2f9"/><rect x="22" y="22" width="436" height="436" rx="8" fill="#fff" stroke="#c2b0cc" stroke-width="3" stroke-dasharray="13 10"/>
+<g fill="none" stroke="#87678f" stroke-width="13"><path d="M94 111h91v91H94zM295 111h91v91h-91zM94 278h91v91H94z"/></g>
+<g fill="#bba9c7" opacity=".7"><rect x="213" y="122" width="28" height="28"/><rect x="246" y="165" width="28" height="28"/><rect x="217" y="289" width="29" height="29"/><rect x="270" y="324" width="31" height="31"/><rect x="319" y="287" width="29" height="29"/><rect x="362" y="338" width="21" height="21"/></g>
+<rect x="52" y="212" width="376" height="58" rx="10" fill="#f7f2f9"/><text x="240" y="246" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#795a84">TU QR AQUÍ</text><text x="240" y="421" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#94819d" letter-spacing="3">EJEMPLO · NO ESCANEABLE</text>
+</svg>
