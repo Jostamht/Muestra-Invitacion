@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1150" role="img" aria-label="Espacio de muestra para la fotografía de los novios">
+<defs>
+  <linearGradient id="sunset" x1=".1" y1="0" x2=".9" y2="1">
+    <stop offset="0" stop-color="#efdcd3"/>
+    <stop offset=".32" stop-color="#d8c3d9"/>
+    <stop offset=".7" stop-color="#9b9cc8"/>
+    <stop offset="1" stop-color="#535c91"/>
+  </linearGradient>
+  <radialGradient id="glow"><stop stop-color="#fff9ea" stop-opacity=".72"/><stop offset="1" stop-color="#fff4e2" stop-opacity="0"/></radialGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7379a9" stop-opacity=".3"/><stop offset="1" stop-color="#41446f" stop-opacity=".92"/></linearGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="22"/></filter>
+</defs>
+<rect width="900" height="1150" fill="url(#sunset)"/>
+<circle cx="595" cy="365" r="295" fill="url(#glow)"/>
+<g fill="#fff8ee" opacity=".23" filter="url(#blur)">
+  <ellipse cx="200" cy="470" rx="300" ry="80"/><ellipse cx="630" cy="515" rx="330" ry="92"/>
+</g>
+<path d="M0 755Q130 682 298 757T610 752T900 708V1150H0Z" fill="#8186B3" opacity=".48"/>
+<path d="M0 872Q185 805 320 861T634 849T900 809V1150H0Z" fill="url(#ground)"/>
+<g stroke="#f8e6e0" stroke-width="4" fill="none" opacity=".43">
+  <path d="M76 1030Q104 765 138 580M111 770Q35 695 53 620M134 649Q198 610 220 548"/>
+  <path d="M842 1080Q805 814 765 634M808 827Q872 782 881 720M774 683Q702 650 690 602"/>
+</g>
+<g fill="#ead0df" opacity=".55">
+  <ellipse cx="89" cy="734" rx="19" ry="48" transform="rotate(-49 89 734)"/>
+  <ellipse cx="171" cy="657" rx="15" ry="44" transform="rotate(40 171 657)"/>
+  <ellipse cx="811" cy="797" rx="18" ry="49" transform="rotate(49 811 797)"/>
+  <ellipse cx="755" cy="703" rx="17" ry="43" transform="rotate(-41 755 703)"/>
+</g>
+<g fill="none" stroke="#fffaed" opacity=".64">
+  <rect x="68" y="60" width="764" height="1030" rx="330" stroke-width="2"/>
+  <path d="M68 416Q80 92 450 92Q812 92 832 416" stroke-width="2"/>
+</g>
+<g text-anchor="middle">
+  <circle cx="450" cy="360" r="61" fill="#fffdf9" fill-opacity=".19" stroke="#fffaf6" stroke-opacity=".68" stroke-width="2"/>
+  <g stroke="#fffaf7" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="412" y="346" width="76" height="49" rx="7"/>
+    <circle cx="450" cy="370" r="16"/>
+    <path d="M425 346l9-13h32l9 13"/>
+  </g>
+  <text x="450" y="460" fill="#fffdf7" font-family="Georgia,serif" font-size="34" letter-spacing="1">Tu fotografía aquí</text>
+  <text x="450" y="505" fill="#fffaf7" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">ESPACIO PERSONALIZABLE</text>
+</g>
+</svg>
