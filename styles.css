@@ -365,3 +365,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offs
 @media(prefers-reduced-motion:reduce){
   .timeline-event-icon{animation:none!important;translate:0!important;rotate:0!important}
 }
+
+
+/* Botón RSVP: icono reconocible de WhatsApp, respetando el estilo floral. */
+.rsvp-section .whatsapp-rsvp-btn {
+  display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  padding:12px 21px 12px 14px;min-height:58px;max-width:min(100%,480px);
+  white-space:normal;line-height:1.4;box-shadow:0 12px 30px #131c4d2e;
+}
+.rsvp-section .whatsapp-rsvp-btn .wa-icon {
+  display:grid;place-items:center;flex:none;width:36px;height:36px;
+  border-radius:50%;background:#25D366;color:#fff;
+  box-shadow:0 3px 8px #0c77342c;transition:transform .3s ease;
+}
+.rsvp-section .whatsapp-rsvp-btn .wa-icon svg{display:block;width:21px;height:21px}
+.rsvp-section .whatsapp-rsvp-btn:not(.disabled-btn):hover .wa-icon{transform:rotate(-9deg) scale(1.1)}
+.rsvp-section .whatsapp-rsvp-btn .wa-arrow{font-size:15px;flex:none}
+.rsvp-section .whatsapp-rsvp-btn.disabled-btn{box-shadow:none}
+.rsvp-section .whatsapp-rsvp-btn.disabled-btn .wa-icon{opacity:.85}
+@media(max-width:400px){
+  .rsvp-section .whatsapp-rsvp-btn{gap:8px;padding:11px 13px 11px 10px;font-size:9px;letter-spacing:.08em}
+  .rsvp-section .whatsapp-rsvp-btn .wa-icon{width:32px;height:32px}
+  .rsvp-section .whatsapp-rsvp-btn .wa-icon svg{width:19px;height:19px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rsvp-section .whatsapp-rsvp-btn .wa-icon{transition:none}
+}
