@@ -2,7 +2,7 @@
 // Edita los campos y guarda para adaptar la invitación a cada pareja.
 window.WEDDING_CONFIG = {
   novios: ["Novia", "Novio"],
-  fotoPortada: "assets/foto-muestra.svg", // Fotografía principal: reemplaza con "assets/foto-portada.jpg"
+  fotoPortada: "assets/foto-portada-muestra.svg", // Fotografía grande: reemplaza por "assets/foto-portada.jpg"
   padres: { // Nombres de ejemplo, editables para cada boda
     novia: { padre: "Padre de la novia", madre: "Madre de la novia" },
     novio: { padre: "Padre del novio", madre: "Madre del novio" }
