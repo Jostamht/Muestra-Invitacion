@@ -46,5 +46,5 @@ window.WEDDING_CONFIG = {
     numero: "", // Ej. 59171234567 sin + ni espacios. Vacío = botón desactivado
     mensaje: "¡Hola! Quisiera confirmar mi asistencia a la boda."
   },
-  musica: "" // Sube un MP3 y configura "assets/musica.mp3". Vacío = sin música
+  musica: "assets/musica.mp3" // Música instrumental de fondo, alojada en el repositorio
 };
