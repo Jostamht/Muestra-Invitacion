@@ -16,7 +16,8 @@
   put("dateDay", shortDate[0]);
   put("dateMonth", shortDate[1]);
   put("dateYear", [shortDate[2], cfg.fecha?.semana || "JUEVES"].join(" · "));
-  put("navDate", [shortDate[0], "12", shortDate[2]].join(" · "));
+  const monthDigits = /^\d{4}-(\d{2})-\d{2}/.exec(cfg.fechaISO || "")?.[1] || "12";
+  put("navDate", [shortDate[0], monthDigits, shortDate[2]].join(" · "));
   put("heroDate", [cfg.fecha?.semana || "JUEVES", shortDate[0] + " DE " + shortDate[1], shortDate[2]].join(" · "));
   put("closingDate", shortDate.join(" · "));
   const closingNames = document.querySelector(".closing-names");
