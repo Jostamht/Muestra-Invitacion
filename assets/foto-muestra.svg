@@ -1,12 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" role="img" aria-label="Espacio para fotografía">
-<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e7dfee"/><stop offset=".58" stop-color="#c8b7d5"/><stop offset="1" stop-color="#ad91b6"/></linearGradient><radialGradient id="light"><stop stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
-<rect width="720" height="960" fill="url(#bg)"/><circle cx="580" cy="170" r="360" fill="url(#light)"/>
-<path d="M-40 960Q100 710 230 740T520 690T780 810V980Z" fill="#9a7ba5" opacity=".25"/>
-<g opacity=".46" fill="none" stroke="#fff" stroke-width="2.5"><path d="M95 755C45 605 65 426 140 300M140 300C165 250 191 210 223 196M140 300C80 251 65 198 77 149M89 510C160 460 194 414 213 357M105 672C170 619 219 577 249 511"/><path d="M625 890C587 732 573 608 620 461M620 461C659 403 684 367 699 319M605 673C533 625 496 577 468 519"/></g>
-<g fill="#f7f2fa" opacity=".65"><ellipse cx="125" cy="335" rx="16" ry="39" transform="rotate(39 125 335)"/><ellipse cx="85" cy="230" rx="15" ry="36" transform="rotate(-32 85 230)"/><ellipse cx="168" cy="466" rx="14" ry="32" transform="rotate(40 168 466)"/><ellipse cx="187" cy="614" rx="14" ry="34" transform="rotate(48 187 614)"/><ellipse cx="607" cy="526" rx="15" ry="38" transform="rotate(44 607 526)"/><ellipse cx="560" cy="635" rx="16" ry="37" transform="rotate(-44 560 635)"/></g>
-<g transform="translate(360 465)" fill="none" stroke="#fff" stroke-opacity=".84" stroke-width="3">
-<rect x="-82" y="-56" width="164" height="120" rx="10"/><circle r="35"/><path d="M-38-56l13-22h53l13 22M-54-16h3"/></g>
-<rect x="125" y="570" width="470" height="125" rx="3" fill="#fff" opacity=".18"/>
-<text x="360" y="622" text-anchor="middle" font-family="Georgia,serif" font-size="38" fill="#fff" letter-spacing="3">Tu fotografía aquí</text>
-<text x="360" y="668" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#fff" letter-spacing="5">PERSONALIZABLE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8D4C4"/><stop offset=".47" stop-color="#E5B1B9"/><stop offset="1" stop-color="#A7A0C9"/></linearGradient>
+<radialGradient id="light"><stop stop-color="#FFF9EF" stop-opacity=".75"/><stop offset="1" stop-color="#FFF9EF" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="720" height="960" fill="url(#sky)"/>
+<circle cx="530" cy="180" r="365" fill="url(#light)"/>
+<path d="M-50 900Q170 735 328 845T770 747V1000H-50Z" fill="#797EBA" opacity=".32"/>
+<path d="M-50 950Q185 865 347 890T770 857V1000H-50Z" fill="#3C487C" opacity=".19"/>
+<g fill="none" stroke="#FFF9F7" stroke-width="2" opacity=".7">
+<path d="M52 885C70 680 85 482 154 299M66 730Q160 633 181 570M89 531Q44 451 67 357M126 358Q193 308 205 242"/>
+<path d="M665 946Q628 722 579 543M628 770Q563 690 522 637M591 585Q632 505 624 434"/>
+</g>
+<g fill="#FFECE6" opacity=".74">
+<ellipse cx="120" cy="445" rx="20" ry="48" transform="rotate(-38 120 445)"/>
+<ellipse cx="145" cy="382" rx="17" ry="43" transform="rotate(43 145 382)"/>
+<ellipse cx="184" cy="573" rx="19" ry="47" transform="rotate(34 184 573)"/>
+<ellipse cx="575" cy="649" rx="23" ry="47" transform="rotate(-40 575 649)"/>
+<ellipse cx="639" cy="516" rx="17" ry="42" transform="rotate(32 639 516)"/>
+</g>
+<g transform="translate(360 448)" fill="none" stroke="#FFFDFC" stroke-width="4" opacity=".88">
+<rect x="-96" y="-57" width="192" height="132" rx="13"/><circle cx="0" cy="11" r="42"/><path d="M-46-57l15-28h63l16 28M-66-15h5"/>
+</g>
+<rect x="95" y="555" width="530" height="120" rx="7" fill="#FFF9F7" opacity=".22"/>
+<text x="360" y="607" text-anchor="middle" font-family="Georgia,serif" font-size="40" fill="#FFFDF9">Tu fotografía aquí</text>
+<text x="360" y="645" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="5" fill="#FFFDFC">ESPACIO PERSONALIZABLE</text>
 </svg>
