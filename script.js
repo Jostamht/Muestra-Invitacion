@@ -13,7 +13,7 @@
   put("nameOne", bride);
   put("nameTwo", groom);
   put("introNames", bride + " y " + groom);
-  setImage("heroPhoto", cfg.fotoPortada || "assets/foto-muestra.svg");
+  setImage("heroPhoto", cfg.fotoPortada || "assets/foto-portada-muestra.svg");
   // Nombres y vestimenta: se personalizan desde config.js sin editar el HTML.
   put("brideFather", cfg.padres?.novia?.padre || "Padre de la novia");
   put("brideMother", cfg.padres?.novia?.madre || "Madre de la novia");
@@ -26,7 +26,56 @@
   const shortDate = [cfg.fecha?.dia || "31", cfg.fecha?.mes || "DICIEMBRE", cfg.fecha?.anio || "2026"];
   put("dateDay", shortDate[0]);
   put("dateMonth", shortDate[1]);
-  put("dateYear", [shortDate[2], cfg.fecha?.semana || "JUEVES"].join(" · "));
+  put("dateYear", shortDate[2]);
+  put("dateWeekday", cfg.fecha?.semana || "JUEVES");
+
+  // El calendario usa la fecha local escrita en fechaISO, sin convertir de zona horaria.
+  // Se recalcula automáticamente al personalizar la boda en config.js.
+  const datePart = /^(\d{4})-(\d{2})-(\d{2})/.exec(cfg.fechaISO || "");
+  const year = datePart ? Number(datePart[1]) : Number(cfg.fecha?.anio || 2026);
+  const month = datePart ? Number(datePart[2]) : 12;
+  const day = datePart ? Number(datePart[3]) : Number(cfg.fecha?.dia || 31);
+  const calendar = byId("weddingCalendar");
+  const isValid = year >= 1900 && year <= 2100 && month >= 1 && month <= 12
+    && day >= 1 && day <= new Date(Date.UTC(year, month, 0)).getUTCDate();
+  if (calendar && isValid) {
+    const monthName = new Intl.DateTimeFormat("es", { month: "long", timeZone: "UTC" })
+      .format(new Date(Date.UTC(year, month - 1, 1))).toLocaleUpperCase("es");
+    const weekday = new Intl.DateTimeFormat("es", { weekday: "long", timeZone: "UTC" })
+      .format(new Date(Date.UTC(year, month - 1, day))).toLocaleUpperCase("es");
+    put("dateDay", day);
+    put("dateMonth", monthName);
+    put("dateYear", year);
+    put("dateWeekday", weekday);
+    calendar.setAttribute("aria-label", monthName + " de " + year + ", boda el día " + day);
+    calendar.replaceChildren();
+    const firstDayOffset = (new Date(Date.UTC(year, month - 1, 1)).getUTCDay() + 6) % 7;
+    const monthLength = new Date(Date.UTC(year, month, 0)).getUTCDate();
+    const cells = Math.ceil((firstDayOffset + monthLength) / 7) * 7;
+    const fragment = document.createDocumentFragment();
+    for (let index = 0; index < cells; index++) {
+      const currentDay = index - firstDayOffset + 1;
+      if (currentDay < 1 || currentDay > monthLength) {
+        const blank = document.createElement("span");
+        blank.className = "calendar-empty";
+        blank.setAttribute("aria-hidden", "true");
+        fragment.appendChild(blank);
+        continue;
+      }
+      const cell = document.createElement("time");
+      cell.setAttribute("role", "gridcell");
+      cell.className = "calendar-day" + (currentDay === day ? " is-wedding" : "");
+      cell.dateTime = year + "-" + String(month).padStart(2, "0") + "-" + String(currentDay).padStart(2, "0");
+      const number = document.createElement("span");
+      number.textContent = String(currentDay);
+      cell.appendChild(number);
+      if (currentDay === day) {
+        cell.setAttribute("aria-label", "Día de la boda: " + weekday.toLowerCase() + " " + day);
+      }
+      fragment.appendChild(cell);
+    }
+    calendar.appendChild(fragment);
+  }
   const monthDigits = /^\d{4}-(\d{2})-\d{2}/.exec(cfg.fechaISO || "")?.[1] || "12";
   put("navDate", [shortDate[0], monthDigits, shortDate[2]].join(" · "));
   put("heroDate", [cfg.fecha?.semana || "JUEVES", shortDate[0] + " DE " + shortDate[1], shortDate[2]].join(" · "));
