@@ -18,7 +18,8 @@ Incluye ilustración vectorial floral en `assets/floral-vivo.svg`, animación fl
 
 ## Contenido de la invitación
 - Portada animada con invitación explícita a tocar el sello.
-- Nombres, fecha ficticia y cuenta regresiva.
+- Portada con fotografía grande, degradado inferior y nombres superpuestos en alto contraste.
+- Calendario mensual con el día de la boda destacado, sincronizado con `fechaISO`, más cuenta regresiva.
 - Padres de la novia y del novio, con cuatro campos editables.
 - Código de vestimenta formal separado para mujeres y hombres, con recomendaciones e ilustraciones.
 - Botón de música flotante y siempre visible al navegar, con acciones claras para reproducir y pausar.
@@ -44,7 +45,7 @@ El control de música queda visible en la esquina inferior mientras los visitant
 Busca la ubicación en Google Maps, selecciona Compartir → Insertar un mapa y copia la URL `src` de Google Maps en `mapaEmbed`. Especifica aparte el enlace de ubicación en `googleMaps`. No pegues etiquetas `iframe` completas.
 
 ### Fotografías y QR
-Sube JPG/PNG/WebP a `assets/` y cambia las rutas en `fotoPortada`, `galeria` o `regalos.qr`. La foto de portada puede reemplazarse sin editar HTML, usando `fotoPortada: "assets/foto-portada.jpg"`. Los archivos de relleno son `assets/foto-muestra.svg` y `assets/qr-muestra.svg`; el QR de relleno no permite realizar depósitos.
+Sube JPG/PNG/WebP a `assets/` y cambia las rutas en `fotoPortada`, `galeria` o `regalos.qr`. La foto de portada grande puede reemplazarse sin editar HTML, usando `fotoPortada: "assets/foto-portada.jpg"`; el marcador actual es `assets/foto-portada-muestra.svg`. Los nombres aparecen automáticamente en la parte inferior de la imagen con un degradado para mantener su legibilidad. Los archivos de relleno son `assets/foto-muestra.svg` y `assets/qr-muestra.svg`; el QR de relleno no permite realizar depósitos.
 
 ### Audio
 El MP3 cargado está en `assets/musica.mp3` y la opción `musica` de `config.js` ya apunta a ese archivo. Al tocar el sello la página intentará reproducirlo; si el navegador lo impide, el invitado podrá tocar el botón superior. Para reemplazar el audio, sube tu propio MP3 a `assets/` y cambia la ruta en `config.js`. Si vas a publicar la invitación comercialmente, comprueba que cuentas con los derechos o licencia necesarios para compartir esa grabación.
