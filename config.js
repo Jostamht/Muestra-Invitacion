@@ -2,6 +2,7 @@
 // Edita los campos y guarda para adaptar la invitación a cada pareja.
 window.WEDDING_CONFIG = {
   novios: ["Novia", "Novio"],
+  fotoPortada: "assets/foto-muestra.svg", // Fotografía principal: reemplaza con "assets/foto-portada.jpg"
   fechaISO: "2026-12-31T17:00:00-04:00", // Fecha y hora de la cuenta regresiva (UTC-04)
   fecha: { dia: "31", mes: "DICIEMBRE", anio: "2026", semana: "JUEVES" },
   ceremonia: {
