@@ -79,7 +79,7 @@ jobs:
           center("&", 355, italic, rose)
           center("Novio", 424, serif, navy)
           d.line([(450,485),(530,485)], fill=peach, width=2)
-          d.text((600,485),"❦",font=font("DejaVuSerif.ttf",22),fill=rose,anchor="mm")
+          d.polygon([(600,475),(608,485),(600,495),(592,485)], fill=rose)
           d.line([(670,485),(750,485)], fill=peach, width=2)
           center("31  ·  DICIEMBRE  ·  2026", 525, tiny, navy, 2)
           out = Path("assets/portada-compartir.jpg")
