@@ -1,0 +1,60 @@
+name: Generar miniatura para compartir
+on:
+  push:
+    paths:
+      - "assets/hedria-joselito.webp"
+      - ".github/workflows/crear-miniatura.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  portada:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener código actual
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Preparar editor de imágenes
+        run: python -m pip install --quiet Pillow
+
+      - name: Crear portada compatible con WhatsApp
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          from pathlib import Path
+
+          source = Path("assets/hedria-joselito.webp")
+          target = Path("assets/portada-whatsapp.jpg")
+          if not source.exists():
+              raise SystemExit("No se encontró la fotografía de la pareja")
+          with Image.open(source) as original:
+              image = ImageOps.fit(
+                  original.convert("RGB"),
+                  (1200, 630),
+                  method=Image.Resampling.LANCZOS,
+                  centering=(0.5, 0.35),
+              )
+              image.save(target, "JPEG", quality=84, optimize=True, progressive=False, subsampling=0)
+          print(f"Vista previa lista: {target}, {target.stat().st_size} bytes")
+          if target.stat().st_size >= 600000:
+              with Image.open(target) as image:
+                  image.save(target, "JPEG", quality=72, optimize=True)
+          if target.stat().st_size >= 600000:
+              raise SystemExit("Miniatura excede 600 KB")
+          PY
+
+      - name: Guardar miniatura sin modificar el resto de la invitación
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/portada-whatsapp.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: generar portada de WhatsApp a partir de foto de la pareja"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

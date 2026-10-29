@@ -1,0 +1,48 @@
+name: Importar música de la invitación
+
+on:
+  push:
+    paths:
+      - .github/workflows/importar-musica.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Incorporar MP3
+        env:
+          MUSIC_URL: "https://at.adobe.com/LrLCGPRu3J8qEIet"
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 \
+            --header "Accept: audio/mpeg,application/octet-stream" \
+            --output assets/musica.mp3 "$MUSIC_URL"
+          bytes="$(wc -c < assets/musica.mp3)"
+          mime="$(file --brief --mime-type assets/musica.mp3)"
+          echo "MP3: ${bytes} bytes, tipo ${mime}"
+          test "$bytes" -ge 100000
+          case "$mime" in
+            audio/mpeg|audio/mp3|application/octet-stream) ;;
+            *) echo "::error::La descarga no es un archivo de audio MP3"; exit 1 ;;
+          esac
+
+      - name: Guardar MP3 dentro de GitHub
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/musica.mp3
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: alojar música de boda en el repositorio"
+            git push
+          fi
