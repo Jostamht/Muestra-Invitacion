@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=parents-dress-music20261029">
+  <link rel="stylesheet" href="styles.css?v=hero-calendar-20261029">
   <script defer src="config.js"></script>
   <script defer src="script.js"></script>
 </head>
@@ -83,14 +83,16 @@
         <img src="assets/floral-vivo.svg" class="floral hero-floral-left" alt="" aria-hidden="true">
         <img src="assets/floral-vivo.svg" class="floral hero-floral-right" alt="" aria-hidden="true">
         <div class="hero-content">
-          <p class="eyebrow">DOS CORAZONES · UN NUEVO COMIENZO</p>
-          <figure class="hero-photo-frame">
-            <span class="hero-photo-flourish" aria-hidden="true">❦</span>
-            <img id="heroPhoto" src="assets/foto-muestra.svg" alt="Espacio personalizable para la fotografía de los novios" loading="eager" decoding="async">
-            <figcaption>Nuestra historia de amor</figcaption>
-          </figure>
+          <p class="eyebrow hero-eyebrow">DOS CORAZONES · UN NUEVO COMIENZO</p>
           <p class="handwriting hero-script">¡Nos casamos!</p>
-          <h1><span id="nameOne">Novia</span><em>y</em><span id="nameTwo">Novio</span></h1>
+          <figure class="hero-photo-frame">
+            <img id="heroPhoto" src="assets/foto-portada-muestra.svg" alt="Espacio personalizable para la fotografía de los novios" loading="eager" decoding="async">
+            <figcaption class="hero-photo-overlay">
+              <span class="hero-photo-kicker">NUESTRA HISTORIA DE AMOR</span>
+              <h1><span id="nameOne">Novia</span><em>y</em><span id="nameTwo">Novio</span></h1>
+              <span class="hero-photo-ornament" aria-hidden="true">✦ &nbsp; ❦ &nbsp; ✦</span>
+            </figcaption>
+          </figure>
           <div class="flourish" aria-hidden="true"><span></span>❦<span></span></div>
           <p class="hero-message">Hay días que merecen guardarse para siempre. Nos encantará que formes parte de este momento inolvidable.</p>
           <p class="hero-date" id="heroDate">JUEVES · 31 DE DICIEMBRE · 2026</p>
@@ -103,10 +105,23 @@
           <p class="eyebrow">RESERVA LA FECHA</p>
           <h2>Un día <em>inolvidable</em></h2>
           <span class="section-ornament animate-icon" aria-hidden="true">✧</span>
-          <div class="date-display" aria-label="Fecha de la boda">
-            <span class="date-month" id="dateMonth">DICIEMBRE</span>
-            <span class="date-number" id="dateDay">31</span>
-            <span class="date-year" id="dateYear">2026 · JUEVES</span>
+          <div class="wedding-calendar" aria-label="Calendario del mes de la boda">
+            <div class="calendar-header">
+              <span class="calendar-overline">SAVE THE DATE</span>
+              <span class="calendar-month" id="dateMonth">DICIEMBRE</span>
+              <span class="calendar-year" id="dateYear">2026</span>
+            </div>
+            <div class="calendar-weekdays" aria-hidden="true">
+              <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+            </div>
+            <div class="calendar-grid" id="weddingCalendar" role="grid" aria-label="Diciembre de 2026">
+              <!-- Los días se generan automáticamente desde config.js. -->
+            </div>
+            <div class="calendar-foot">
+              <span class="calendar-foot-label">NOS VEMOS EL</span>
+              <strong class="calendar-big-day" id="dateDay">31</strong>
+              <span class="calendar-weekday" id="dateWeekday">JUEVES</span>
+            </div>
           </div>
           <p class="intro-paragraph">La felicidad se multiplica cuando se comparte. Nos encantará celebrar este momento contigo.</p>
         </div>
