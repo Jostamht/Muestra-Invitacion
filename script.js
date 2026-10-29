@@ -14,6 +14,15 @@
   put("nameTwo", groom);
   put("introNames", bride + " y " + groom);
   setImage("heroPhoto", cfg.fotoPortada || "assets/foto-muestra.svg");
+  // Nombres y vestimenta: se personalizan desde config.js sin editar el HTML.
+  put("brideFather", cfg.padres?.novia?.padre || "Padre de la novia");
+  put("brideMother", cfg.padres?.novia?.madre || "Madre de la novia");
+  put("groomFather", cfg.padres?.novio?.padre || "Padre del novio");
+  put("groomMother", cfg.padres?.novio?.madre || "Madre del novio");
+  put("dressType", cfg.vestimenta?.tipo || "Formal");
+  put("dressWomen", cfg.vestimenta?.mujeres || "Vestido largo o de cóctel elegante.");
+  put("dressMen", cfg.vestimenta?.hombres || "Traje formal con camisa y corbata.");
+  put("dressNote", cfg.vestimenta?.nota || "Te esperamos con tu mejor atuendo para celebrar juntos.");
   const shortDate = [cfg.fecha?.dia || "31", cfg.fecha?.mes || "DICIEMBRE", cfg.fecha?.anio || "2026"];
   put("dateDay", shortDate[0]);
   put("dateMonth", shortDate[1]);
@@ -141,26 +150,37 @@
   const musicButton = byId("musicToggle");
   const audioSource = cfg.musica || "";
   const musicLabel = byId("musicLabel");
+  const musicHint = byId("musicHint");
+  const setMusicState = (playing) => {
+    musicButton.classList.toggle("playing", playing);
+    musicButton.setAttribute("aria-pressed", String(playing));
+    musicButton.setAttribute("aria-label", playing ? "Pausar música de fondo" : "Reproducir música de fondo");
+    musicLabel.textContent = playing ? "Pausar música" : "Reproducir música";
+    musicHint.textContent = playing ? "La música está sonando" : "Música pausada";
+  };
   if (audioSource) {
     audio.src = audioSource;
     musicButton.disabled = false;
-    musicButton.setAttribute("aria-label", "Reproducir música");
-    musicLabel.textContent = "Activar música";
+    setMusicState(false);
     musicButton.addEventListener("click", async () => {
       if (!audio.paused) { audio.pause(); return; }
       try { await audio.play(); }
-      catch { musicLabel.textContent = "Audio no disponible"; }
+      catch {
+        musicLabel.textContent = "No se pudo reproducir";
+        musicHint.textContent = "Comprueba el audio";
+      }
     });
-    audio.addEventListener("play", () => {
-      musicButton.classList.add("playing");
-      musicLabel.textContent = "Pausar música";
-      musicButton.setAttribute("aria-label", "Pausar música");
+    audio.addEventListener("play", () => setMusicState(true));
+    audio.addEventListener("pause", () => setMusicState(false));
+    audio.addEventListener("error", () => {
+      musicLabel.textContent = "Audio no disponible";
+      musicHint.textContent = "Comprueba el archivo";
+      musicButton.setAttribute("aria-label", "Audio no disponible");
+      musicButton.disabled = true;
     });
-    audio.addEventListener("pause", () => {
-      musicButton.classList.remove("playing");
-      musicLabel.textContent = "Activar música";
-      musicButton.setAttribute("aria-label", "Reproducir música");
-    });
+  } else {
+    musicLabel.textContent = "Sin música";
+    musicHint.textContent = "Audio no configurado";
   }
 
   const overlay = byId("envelopeScreen");
@@ -202,7 +222,7 @@
     document.body.classList.remove("invitation-locked");
     open.disabled = true;
     if (audioSource && !musicButton.disabled && audio.paused) {
-      audio.play().catch(() => { musicLabel.textContent = "Toca para escuchar"; });
+      audio.play().catch(() => { musicHint.textContent = "Toca para reproducir"; });
     }
     setTimeout(() => {
       overlay.hidden = true;
