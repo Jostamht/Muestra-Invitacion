@@ -391,3 +391,177 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offs
 @media(prefers-reduced-motion:reduce){
   .rsvp-section .whatsapp-rsvp-btn .wa-icon{transition:none}
 }
+
+
+/* NUEVAS SECCIONES · PADRES Y VESTIMENTA */
+
+/* Padres: papelería romántica inspirada en el resto de la invitación. */
+.parents-section{
+  overflow:hidden;
+  background:linear-gradient(130deg,#FFFDFB 3%,#FBF1F1 52%,#F6F0F8 100%);
+}
+.parents-floral{
+  width:310px;left:-132px;bottom:-125px;opacity:.37;
+  transform:rotate(-23deg);
+}
+.parents-grid{
+  max-width:1010px;margin:0 auto;display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:27px;
+}
+.parents-card{
+  position:relative;text-align:center;
+  border:1px solid #E8D5DB;border-radius:16px;
+  background:#FFFEFCEB;padding:45px 24px 49px;
+  box-shadow:0 20px 50px rgba(65,62,105,.075);
+}
+.parents-card:before{
+  content:"";position:absolute;inset:11px;pointer-events:none;
+  border:1px solid #EADDE4;border-radius:10px;
+}
+.parents-card-icon{
+  display:block;font:400 35px Georgia,serif;
+  color:#C78D9E;margin-bottom:15px;
+  animation:iconFloat 5s ease-in-out infinite alternate;
+}
+.parents-card-label{
+  position:relative;font-size:10px;letter-spacing:.23em;
+  color:#8F83A1;font-weight:700;margin:0 0 21px;
+}
+.parent-person{
+  position:relative;margin:0 auto;
+  font:500 clamp(27px,3vw,38px)/1.2 "Cormorant Garamond",Georgia,serif;
+  color:#48547F;overflow-wrap:anywhere;
+}
+.parents-join{
+  position:relative;display:block;
+  font:400 31px/1 "Great Vibes",cursive;
+  color:#BC859A;margin:11px auto;
+}
+.parents-card:nth-child(2) .parents-card-icon{animation-delay:-2s}
+
+/* Vestimenta: dos tarjetas ilustradas con recomendaciones distintas. */
+.dress-section{
+  overflow:hidden;
+  background:linear-gradient(130deg,#EDECF6,#F9EEF1 65%,#FEF6F1);
+}
+.dress-section:before{
+  content:"";position:absolute;right:-128px;top:-130px;
+  background:url("assets/floral-vivo.svg") center/contain no-repeat;
+  width:310px;height:365px;opacity:.21;pointer-events:none;
+  transform:scaleX(-1) rotate(-15deg);
+}
+.dress-section .section-heading{margin-bottom:39px}
+.dress-type{
+  display:inline-block!important;margin:6px auto 0!important;
+  font-size:11px!important;letter-spacing:.3em!important;
+  font-weight:700;color:#4E5A88!important;
+  border:1px solid #C8BED8;padding:10px 24px;border-radius:24px;
+  background:#FFFAF9;
+}
+.dress-grid{
+  max-width:1010px;margin:0 auto;display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:27px;
+}
+.dress-card{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:39px 28px 43px;
+  border:1px solid #E6D9E7;border-radius:16px;
+  background:#FFFFFFE8;box-shadow:0 20px 47px rgba(62,58,103,.09);
+}
+.dress-illustration{
+  display:grid;place-items:center;
+  width:133px;height:144px;color:#AC798E;margin-bottom:18px;
+  background:radial-gradient(circle at 50% 45%,#FBE6E4,#F8F0F4 68%,transparent 72%);
+}
+.dress-card:nth-child(2) .dress-illustration{
+  color:#6F78AB;
+  background:radial-gradient(circle at 50% 45%,#E9E9F5,#F3F0F9 68%,transparent 72%);
+}
+.dress-illustration svg{
+  width:100px;height:113px;
+  animation:dressFloat 4.8s ease-in-out infinite alternate;
+}
+.dress-card:nth-child(2) .dress-illustration svg{animation-delay:-2s}
+.dress-card .eyebrow{font-size:10px}
+.dress-card h3{
+  font:500 43px/1.1 "Cormorant Garamond",Georgia,serif;
+  color:#45517F;margin:12px 0 13px;
+}
+.dress-card>p:last-child{
+  max-width:305px;font-size:14px;line-height:1.8;
+  color:#7D7487;margin:0;
+}
+.dress-note{
+  max-width:650px;text-align:center;font-size:13px;
+  line-height:1.85;color:#7B758A;margin:30px auto 0;
+}
+@keyframes dressFloat{
+  0%{transform:translateY(3px) rotate(-2deg)}
+  100%{transform:translateY(-5px) rotate(2deg)}
+}
+
+/* Control accesible: flotante y visible mientras se desplaza la página. */
+.topbar .music-toggle{
+  position:fixed;z-index:15;
+  right:max(18px,env(safe-area-inset-right));
+  bottom:max(20px,env(safe-area-inset-bottom));
+  top:auto;left:auto;
+  min-width:200px;min-height:66px;
+  display:flex;align-items:center;justify-content:flex-start;gap:12px;
+  text-align:left;border:2px solid #5D6695;border-radius:45px;
+  padding:10px 20px 10px 11px;
+  color:#334373;background:#FFFDF9;
+  box-shadow:0 12px 35px rgba(38,43,93,.3);
+  cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;
+}
+.topbar .music-toggle:not(:disabled):hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 43px rgba(38,43,93,.36);
+}
+.topbar .music-toggle:focus-visible{
+  outline:3px solid #C47790;outline-offset:3px;
+}
+.topbar .music-control-icon{
+  width:44px;height:44px;flex:none;display:grid;place-items:center;
+  border-radius:50%;color:#FFF;background:var(--navy);
+}
+.topbar .music-control-icon svg{width:25px;height:25px;display:block;grid-area:1/1}
+.topbar .music-pause-symbol{display:none!important}
+.topbar .music-toggle.playing .music-play-symbol{display:none!important}
+.topbar .music-toggle.playing .music-pause-symbol{display:block!important}
+.topbar .music-toggle.playing .music-control-icon{background:#B96B88}
+.topbar .music-control-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.topbar .music-control-copy strong{
+  font:700 14px/1.15 "DM Sans",Arial,sans-serif;
+  color:#344273;white-space:nowrap;
+}
+.topbar .music-control-copy small{
+  font:500 11px/1.2 "DM Sans",Arial,sans-serif;
+  color:#72718B;white-space:nowrap;
+}
+.topbar .music-toggle:disabled{opacity:.7;cursor:default}
+@media(max-width:760px){
+  .parents-section,.dress-section{padding:78px 22px}
+  .parents-grid,.dress-grid{grid-template-columns:1fr;gap:20px;max-width:490px}
+  .parents-card{padding:34px 20px 39px}
+  .parent-person{font-size:32px}
+  .parents-floral{width:210px;left:-135px;bottom:-80px;opacity:.26}
+  .dress-card{padding:29px 20px 34px}
+  .dress-illustration{width:113px;height:115px;margin-bottom:9px}
+  .dress-illustration svg{width:86px;height:102px}
+  .dress-card h3{font-size:37px}
+  .dress-section:before{opacity:.11;width:215px;right:-128px;top:-120px}
+  .topbar .music-toggle{
+    right:calc(12px + env(safe-area-inset-right));
+    bottom:calc(12px + env(safe-area-inset-bottom));
+    min-width:188px;min-height:62px;
+    padding:9px 17px 9px 9px;gap:10px;
+  }
+  .topbar .music-control-icon{width:41px;height:41px}
+  .topbar .music-control-copy strong{font-size:14px}
+  .topbar .music-control-copy small{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .parents-card-icon,.dress-illustration svg{animation:none!important}
+  .topbar .music-toggle{transition:none!important}
+}
