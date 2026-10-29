@@ -13,6 +13,7 @@
   put("nameOne", bride);
   put("nameTwo", groom);
   put("introNames", bride + " y " + groom);
+  setImage("heroPhoto", cfg.fotoPortada || "assets/foto-muestra.svg");
   const shortDate = [cfg.fecha?.dia || "31", cfg.fecha?.mes || "DICIEMBRE", cfg.fecha?.anio || "2026"];
   put("dateDay", shortDate[0]);
   put("dateMonth", shortDate[1]);
@@ -86,12 +87,25 @@
   if (Array.isArray(cfg.cronograma) && cfg.cronograma.length) {
     const targetList = byId("timeline");
     targetList.replaceChildren();
-    cfg.cronograma.forEach((entry) => {
+    const icons = [
+      '<circle cx="12" cy="12" r="7"/><path d="M12 5V2M12 22v-3M5 12H2M22 12h-3"/><path d="m10 12 1.6 1.6 3.4-4.1"/>', // Llegada
+      '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>', // Vals
+      '<path d="M4 3v9a3 3 0 0 0 6 0V3M7 3v18M16 3v18M16 3c3 0 5 2.5 5 6v4h-5"/>', // Cena
+      '<path d="M4 11h16v10H4zM4 15h16M7 11V7h10v4M12 7V3"/><path d="M12 3c-2 1-2 3 0 4 2-1 2-3 0-4"/>', // Torta
+      '<path d="M4 12c4-1 7-4 8-8 1 4 4 7 8 8-4 1-7 4-8 8-1-4-4-7-8-8zM20 3v4M18 5h4"/>'
+    ];
+    cfg.cronograma.forEach((entry, index) => {
       const item = document.createElement("div"); item.className = "timeline-item";
       const time = document.createElement("time"); time.textContent = entry.hora || "--:--";
       const dot = document.createElement("span"); dot.className = "timeline-dot"; dot.setAttribute("aria-hidden", "true");
+      const detail = document.createElement("div"); detail.className = "timeline-detail";
+      const icon = document.createElement("span"); icon.className = "timeline-event-icon";
+      icon.setAttribute("aria-hidden", "true");
+      icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' + icons[index % icons.length] + '</svg>';
+      icon.style.setProperty("--event-index", index);
       const title = document.createElement("p"); title.textContent = entry.evento || "Evento";
-      item.append(time, dot, title);
+      detail.append(icon, title);
+      item.append(time, dot, detail);
       targetList.appendChild(item);
     });
   }
