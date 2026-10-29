@@ -21,25 +21,25 @@ Incluye ilustración vectorial floral en `assets/floral-vivo.svg`, animación fl
 - Nombres, fecha ficticia y cuenta regresiva.
 - Ceremonia religiosa y recepción con **dos direcciones, dos enlaces a Google Maps y dos mapas incrustables**.
 - Cronograma de cinco momentos: entrada de los novios, vals, cena, corte de torta y despedida.
-- Galería de tres fotografías de relleno, fáciles de reemplazar.
+- Fotografía principal de los novios en la portada; galería de tres fotografías de relleno, fáciles de reemplazar.
 - Nota de regalos con QR no escaneable de ejemplo.
 - Zoom (hora, ID, contraseña y enlace).
 - RSVP por WhatsApp, inicialmente inactivo.
-- Música opcional, inicialmente inactiva hasta subir un MP3.
+- Música de fondo incorporada: `assets/musica.mp3`, con reproducción al tocar el sello y control de pausa en la invitación.
 
 ## Personalización
 Para preparar una invitación real, modifica únicamente los datos de [config.js](config.js):
 
-`novios`, `fechaISO`, `fecha`, `ceremonia`, `recepcion`, `cronograma`, `galeria`, `regalos.qr`, `zoom`, `whatsapp`, `musica`.
+`novios`, `fotoPortada`, `fechaISO`, `fecha`, `ceremonia`, `recepcion`, `cronograma`, `galeria`, `regalos.qr`, `zoom`, `whatsapp`, `musica`.
 
 ### Mapas
 Busca la ubicación en Google Maps, selecciona Compartir → Insertar un mapa y copia la URL `src` de Google Maps en `mapaEmbed`. Especifica aparte el enlace de ubicación en `googleMaps`. No pegues etiquetas `iframe` completas.
 
 ### Fotografías y QR
-Sube JPG/PNG/WebP a `assets/` y cambia las rutas en `galeria` o `regalos.qr`. Los archivos de relleno son `assets/foto-muestra.svg` y `assets/qr-muestra.svg`, y el QR de relleno no permite realizar depósitos.
+Sube JPG/PNG/WebP a `assets/` y cambia las rutas en `fotoPortada`, `galeria` o `regalos.qr`. La foto de portada puede reemplazarse sin editar HTML, usando `fotoPortada: "assets/foto-portada.jpg"`. Los archivos de relleno son `assets/foto-muestra.svg` y `assets/qr-muestra.svg`; el QR de relleno no permite realizar depósitos.
 
 ### Audio
-Sube un MP3 a `assets/` y cambia `musica: ""` por `musica: "assets/musica.mp3"`. El reproductor intentará iniciarse con el toque del sello; si el navegador lo impide, el invitado puede reproducirlo desde el botón.
+El MP3 cargado está en `assets/musica.mp3` y la opción `musica` de `config.js` ya apunta a ese archivo. Al tocar el sello la página intentará reproducirlo; si el navegador lo impide, el invitado podrá tocar el botón superior. Para reemplazar el audio, sube tu propio MP3 a `assets/` y cambia la ruta en `config.js`. Si vas a publicar la invitación comercialmente, comprueba que cuentas con los derechos o licencia necesarios para compartir esa grabación.
 
 ### Confirmar asistencia
 Completa `whatsapp.numero` en formato internacional, sin el signo `+` (ejemplo ficticio: `59171234567`). El botón permanecerá inactivo hasta configurarlo.
